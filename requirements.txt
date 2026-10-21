@@ -1,0 +1,8 @@
+numpy
+pandas
+pillow
+pyyaml
+scikit-learn
+mlflow
+huggingface_hub
+pytest

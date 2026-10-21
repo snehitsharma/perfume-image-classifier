@@ -1,0 +1,14 @@
+# Single source of run settings. Every script reads this file.
+seed: 42
+
+dataset:
+  repo_id: doevent/perfume
+  # Pinned Hugging Face commit so every run uses the same files.
+  revision: 9d2db452d8f0d649c4bfb0189a2fcc5282028a3c
+  csv_file: perfumes.csv
+  images_file: images.zip
+
+paths:
+  raw_dir: data/raw
+  images_dir: data/images
+  reports_dir: reports

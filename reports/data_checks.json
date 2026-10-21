@@ -1,0 +1,101 @@
+{
+  "rows": 26319,
+  "usable_rows": 26283,
+  "missing": {
+    "brand": 0,
+    "name_perfume": 0,
+    "family": 0,
+    "subfamily": 0,
+    "fragrances": 0,
+    "origin": 3295,
+    "gender": 0,
+    "years": 0,
+    "description": 54,
+    "image_name": 36,
+    "ingredients": 0
+  },
+  "duplicates": {
+    "image_name": 0,
+    "brand_and_name": 71,
+    "brand_and_name_case_insensitive": 71
+  },
+  "images": {
+    "files_on_disk": 26422,
+    "rows_with_image_name": 26283,
+    "rows_missing_image_file": 0,
+    "files_without_row": 139,
+    "broken_images": [],
+    "most_common_sizes": [
+      [
+        [
+          500,
+          667
+        ],
+        26253
+      ],
+      [
+        [
+          500,
+          745
+        ],
+        10
+      ],
+      [
+        [
+          500,
+          896
+        ],
+        3
+      ],
+      [
+        [
+          500,
+          500
+        ],
+        2
+      ],
+      [
+        [
+          500,
+          660
+        ],
+        2
+      ]
+    ],
+    "modes": {
+      "RGB": 26214,
+      "RGBA": 69
+    }
+  },
+  "balance": {
+    "family": {
+      "FLORAL": 10774,
+      "WOODY": 7044,
+      "AMBERY (ORIENTAL)": 2362,
+      "AROMATIC FOUGERE": 2330,
+      "CITRUS": 1606,
+      "CHYPRE": 1133,
+      "LEATHER": 1070
+    },
+    "subfamily_classes": 15,
+    "gender": {
+      "Unisex": 11057,
+      "Female": 9735,
+      "Male": 5527
+    },
+    "brands": 1263,
+    "top_brands": {
+      "Avon": 674,
+      "Guerlain": 341,
+      "O Boticário": 238,
+      "Ajmal": 237,
+      "Dior": 180,
+      "Natura": 173,
+      "Oriflame": 170,
+      "Givenchy": 161,
+      "Lattafa": 157,
+      "Demeter Fragrance Library": 155
+    },
+    "brands_with_one_perfume": 82
+  }
+}

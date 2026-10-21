@@ -8,3 +8,4 @@ images/
 mlruns/
 .env
 CLAUDE.md
+*.egg-info/
