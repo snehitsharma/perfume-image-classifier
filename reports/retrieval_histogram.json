@@ -1,0 +1,74 @@
+{
+  "model": "histogram",
+  "catalog_size": 26283,
+  "closed_set": {
+    "easy": {
+      "top1": 0.729,
+      "top5": 0.844,
+      "top10": 0.872,
+      "same_name_top1": 0.729,
+      "same_name_top5": 0.844,
+      "same_name_top10": 0.872,
+      "queries": 1000
+    },
+    "medium": {
+      "top1": 0.365,
+      "top5": 0.458,
+      "top10": 0.49,
+      "same_name_top1": 0.365,
+      "same_name_top5": 0.458,
+      "same_name_top10": 0.49,
+      "queries": 1000
+    },
+    "hard": {
+      "top1": 0.016,
+      "top5": 0.039,
+      "top10": 0.054,
+      "same_name_top1": 0.016,
+      "same_name_top5": 0.039,
+      "same_name_top10": 0.054,
+      "queries": 1000
+    },
+    "all": {
+      "top1": 0.37,
+      "top5": 0.447,
+      "top10": 0.472,
+      "queries": 3000
+    }
+  },
+  "open_set": {
+    "threshold": 0.96197909116745,
+    "index_size": 25283,
+    "test_in_queries": 1500,
+    "test_held_out_queries": 1500,
+    "easy": {
+      "in_catalog_correct": 0.452,
+      "in_catalog_wrong_match": 0.076,
+      "in_catalog_rejected": 0.472,
+      "held_out_rejected": 0.852,
+      "balanced_correct": 0.652
+    },
+    "medium": {
+      "in_catalog_correct": 0.124,
+      "in_catalog_wrong_match": 0.07,
+      "in_catalog_rejected": 0.806,
+      "held_out_rejected": 0.908,
+      "balanced_correct": 0.516
+    },
+    "hard": {
+      "in_catalog_correct": 0.0,
+      "in_catalog_wrong_match": 0.002,
+      "in_catalog_rejected": 0.998,
+      "held_out_rejected": 0.998,
+      "balanced_correct": 0.499
+    },
+    "all": {
+      "in_catalog_correct": 0.192,
+      "in_catalog_wrong_match": 0.04933333333333333,
+      "in_catalog_rejected": 0.7586666666666667,
+      "held_out_rejected": 0.9193333333333333,
+      "balanced_correct": 0.5556666666666666
+    }
+  },
+  "held_out_with_namesake_in_index": 4
+}

@@ -11,6 +11,17 @@ dataset:
 queries:
   # Catalog items sampled for the augmented query set; each gets one query per level.
   items: 1000
+  # Further items removed from the index to test the "not in the catalog" answer.
+  held_out_items: 1000
+
+embedding:
+  model: ViT-B-32
+  pretrained: laion2b_s34b_b79k
+  batch_size: 128
+
+classifier:
+  test_size: 0.2
+  C: 1.0
 
 paths:
   raw_dir: data/raw

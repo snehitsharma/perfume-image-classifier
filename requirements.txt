@@ -1,9 +1,15 @@
-numpy
-pandas
-pillow
-pyyaml
-scikit-learn
-mlflow
-huggingface_hub
-pytest
-scipy
+# Versions used for the reported results.
+# For GPU torch on Windows/Linux, install it first:
+#   pip install torch==2.14.1 torchvision==0.29.1 --index-url https://download.pytorch.org/whl/cu126
+huggingface_hub==2.2.0
+mlflow==3.17.2
+numpy==2.5.4
+open_clip_torch==3.3.0
+pandas==3.0.6
+pillow==13.0.0
+pytest==9.1.1
+PyYAML==6.0.3
+scikit-learn==1.9.1
+scipy==1.18.1
+torch==2.14.1
+torchvision==0.29.1

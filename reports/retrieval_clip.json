@@ -1,0 +1,74 @@
+{
+  "model": "clip ViT-B-32/laion2b_s34b_b79k",
+  "catalog_size": 26283,
+  "closed_set": {
+    "easy": {
+      "top1": 0.947,
+      "top5": 0.989,
+      "top10": 0.994,
+      "same_name_top1": 0.947,
+      "same_name_top5": 0.989,
+      "same_name_top10": 0.994,
+      "queries": 1000
+    },
+    "medium": {
+      "top1": 0.873,
+      "top5": 0.965,
+      "top10": 0.98,
+      "same_name_top1": 0.873,
+      "same_name_top5": 0.965,
+      "same_name_top10": 0.98,
+      "queries": 1000
+    },
+    "hard": {
+      "top1": 0.511,
+      "top5": 0.679,
+      "top10": 0.735,
+      "same_name_top1": 0.511,
+      "same_name_top5": 0.679,
+      "same_name_top10": 0.735,
+      "queries": 1000
+    },
+    "all": {
+      "top1": 0.777,
+      "top5": 0.8776666666666667,
+      "top10": 0.903,
+      "queries": 3000
+    }
+  },
+  "open_set": {
+    "threshold": 0.789573073387146,
+    "index_size": 25283,
+    "test_in_queries": 1500,
+    "test_held_out_queries": 1500,
+    "easy": {
+      "in_catalog_correct": 0.916,
+      "in_catalog_wrong_match": 0.046,
+      "in_catalog_rejected": 0.038,
+      "held_out_rejected": 0.538,
+      "balanced_correct": 0.7270000000000001
+    },
+    "medium": {
+      "in_catalog_correct": 0.69,
+      "in_catalog_wrong_match": 0.058,
+      "in_catalog_rejected": 0.252,
+      "held_out_rejected": 0.716,
+      "balanced_correct": 0.703
+    },
+    "hard": {
+      "in_catalog_correct": 0.052,
+      "in_catalog_wrong_match": 0.01,
+      "in_catalog_rejected": 0.938,
+      "held_out_rejected": 0.982,
+      "balanced_correct": 0.517
+    },
+    "all": {
+      "in_catalog_correct": 0.5526666666666666,
+      "in_catalog_wrong_match": 0.038,
+      "in_catalog_rejected": 0.4093333333333333,
+      "held_out_rejected": 0.7453333333333333,
+      "balanced_correct": 0.649
+    }
+  },
+  "held_out_with_namesake_in_index": 4
+}
