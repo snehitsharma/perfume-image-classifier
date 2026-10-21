@@ -1,7 +1,5 @@
 # Perfume Image Classifier: project brief
 
-**Status: planned. No code and no results yet.** This is a plan. Everything below is a target or a design decision, not a finding. Results get added only after the runs, with the commands to reproduce them.
-
 ## Goal
 
 Take a photo of a perfume bottle and return which perfume it most likely is (image matching against a catalog), a predicted fragrance family (a classifier), its listed ingredients and notes, and a short plain-language description of what it smells like, written only from the retrieved record.
