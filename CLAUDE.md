@@ -1,10 +1,10 @@
-# ScentLens: instructions for the agent building this project
+# Perfume Image Classifier: instructions for the agent building this project
 
 Read `README.md` first. It is the brief. This file says how to work.
 
 ## What this project is
 
-A photo of a perfume bottle goes in. The system finds the bottle in a catalog of about 26,000 perfumes by image similarity, reads that perfume's record, and writes a short explanation of its scent profile using only that record. Owner: Snehit Sharma. This is a portfolio project that will be linked from his resume, so what is written about it must be true.
+A photo of a perfume bottle goes in. The system finds the bottle in a catalog of about 26,000 perfumes by image similarity, predicts its fragrance family with a classifier on the image embeddings, reads the matched record, and writes a short explanation of its scent profile using only that record. Owner: Snehit Sharma. This is a portfolio project that will be linked from his resume, so what is written about it must be true.
 
 ## Honesty rules (the most important part)
 
@@ -34,7 +34,7 @@ A photo of a perfume bottle goes in. The system finds the bottle in a catalog of
 
 - Commit small and often with plain messages (what changed).
 - **No `Co-Authored-By` lines and no AI attribution of any kind in commits or pull requests.** This is Snehit's instruction for all his repos.
-- The repo is private. Do not make it public. Snehit will decide when.
+- The repo is public. Keep the README status line true at all times: say what is planned and what is done, and never describe unfinished work as finished.
 
 ## When the project is finished
 
@@ -44,4 +44,4 @@ Do not touch his resume. Tell Snehit it is done and list, in a short plain note:
 2. What the system cannot do.
 3. Any claim in the README that you could not verify.
 
-He (or the resume agent) will then add a verified row to his claims ledger and fill in the resume bullets. The pending bullets live in his resume vault at `career-vault/projects/scentlens.md` with placeholders for the numbers.
+He (or the resume agent) will then add a verified row to his claims ledger and fill in the resume bullets. The pending bullets live in his resume vault at `career-vault/projects/scentlens.md` (project name there is Perfume Image Classifier) with placeholders for the numbers.
