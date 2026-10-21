@@ -1,4 +1,4 @@
-# Perfume Scanner: project brief
+# ScentLens: project brief
 
 **Status: planned. No code and no results yet.** This is a plan. Everything below is a target or a design decision, not a finding. Results get added only after the runs, with the commands to reproduce them.
 
