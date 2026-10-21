@@ -4,6 +4,47 @@
 
 Take a photo of a perfume bottle and return which perfume it most likely is (image matching against a catalog), a predicted fragrance family (a classifier), its listed ingredients and notes, and a short plain-language description of what it smells like, written only from the retrieved record.
 
+## Progress
+
+Milestone 1 (data checks, augmented query set, baseline retrieval) is done. Milestones 2 to 6 are planned and not started: there is no embedding model, classifier, explanation, API or Docker image yet.
+
+### Setup
+
+```
+python -m venv .venv
+.venv\Scripts\activate          # Windows; on Linux/macOS: source .venv/bin/activate
+pip install -r requirements.txt
+pip install -e .
+python scripts/download_data.py  # ~900 MB, pinned to dataset commit 9d2db45 in config.yaml
+pytest
+```
+
+### Milestone 1 results
+
+**Data checks** (`python scripts/data_checks.py`, full output in [reports/data_checks.json](reports/data_checks.json)):
+
+- 26,319 catalog rows; 26,283 have a readable image and form the catalog used below. 36 rows have no image name; 139 image files have no row; no image failed to decode.
+- No field is empty except `origin` (3,295 rows) and `description` (54 rows). Every row has at least one ingredient.
+- 71 rows repeat an earlier brand + name. Most are different releases (different year, sometimes a different family), so they are kept as separate items.
+- Family balance is uneven: FLORAL 10,774, WOODY 7,044, AMBERY (ORIENTAL) 2,362, AROMATIC FOUGERE 2,330, CITRUS 1,606, CHYPRE 1,133, LEATHER 1,070. A majority-class guess would be right 41% of the time.
+- 1,263 brands. Images are clean product shots on a white background, almost all 500 x 667 pixels.
+
+**Query set** (`python scripts/make_queries.py`): 1,000 catalog items sampled with seed 42, each turned into one query at three levels. Regenerating gives byte-identical files.
+
+- *easy*: crop to 85 to 100%, small brightness, contrast and colour changes, JPEG.
+- *medium*: rotation up to 15 degrees, crop to 70 to 100%, larger lighting changes, blur, lower JPEG quality.
+- *hard*: the white background is replaced by a random colour, gradient or texture, then rotation up to 25 degrees, crop to 60 to 90%, colour cast, blur, downscale to 160 px and back, and low JPEG quality.
+
+**Baseline retrieval** (`python scripts/eval_baseline.py`, output in [reports/baseline_retrieval.json](reports/baseline_retrieval.json), run logged in MLflow). Feature: a 256-bin HSV colour histogram of the non-white pixels, matched by Bhattacharyya similarity against all 26,283 items.
+
+| Level | Queries | Top-1 | Top-5 | Top-10 |
+|---|---|---|---|---|
+| easy | 1,000 | 72.9% | 84.4% | 87.2% |
+| medium | 1,000 | 36.5% | 45.8% | 49.0% |
+| hard | 1,000 | 1.6% | 3.9% | 5.4% |
+
+Colour alone holds up under small changes and collapses once the background and lighting change. Counting any item with the same brand + name as correct gives identical numbers, so namesake releases did not affect this run. These queries are synthetic. No real photos have been tested yet (milestone 3).
+
 ## What a photo can and cannot tell you
 
 A photo cannot reveal ingredients or a recipe. Two bottles can look nothing alike and smell the same, and a formula is a trade secret that never appears in an image. So the system works in three honest steps:

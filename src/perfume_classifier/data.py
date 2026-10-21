@@ -60,3 +60,10 @@ def load_catalog(csv_path: Path) -> pd.DataFrame:
         df[col] = df[col].str.strip().replace("", pd.NA)
     df["ingredients"] = df["ingredients"].map(parse_ingredients)
     return df
+
+
+def usable_catalog(cfg: Config) -> pd.DataFrame:
+    """Catalog rows with an image file on disk, in a fixed order. Row position is the item id."""
+    df = load_catalog(cfg.raw_dir / cfg.csv_file)
+    has_file = df["image_name"].map(lambda n: isinstance(n, str) and (cfg.images_dir / n).is_file())
+    return df[has_file].sort_values("image_name").reset_index(drop=True)

@@ -8,7 +8,13 @@ dataset:
   csv_file: perfumes.csv
   images_file: images.zip
 
+queries:
+  # Catalog items sampled for the augmented query set; each gets one query per level.
+  items: 1000
+
 paths:
   raw_dir: data/raw
   images_dir: data/images
+  queries_dir: data/queries
+  features_dir: data/features
   reports_dir: reports

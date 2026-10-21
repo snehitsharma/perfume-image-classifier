@@ -18,8 +18,11 @@ class Config:
     revision: str
     csv_file: str
     images_file: str
+    query_items: int
     raw_dir: Path
     images_dir: Path
+    queries_dir: Path
+    features_dir: Path
     reports_dir: Path
 
 
@@ -32,8 +35,11 @@ def load_config(path: Path = ROOT / "config.yaml") -> Config:
         revision=ds["revision"],
         csv_file=ds["csv_file"],
         images_file=ds["images_file"],
+        query_items=int(raw["queries"]["items"]),
         raw_dir=ROOT / paths["raw_dir"],
         images_dir=ROOT / paths["images_dir"],
+        queries_dir=ROOT / paths["queries_dir"],
+        features_dir=ROOT / paths["features_dir"],
         reports_dir=ROOT / paths["reports_dir"],
     )
 

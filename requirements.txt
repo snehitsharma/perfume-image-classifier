@@ -6,3 +6,4 @@ scikit-learn
 mlflow
 huggingface_hub
 pytest
+scipy
