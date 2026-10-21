@@ -1,16 +1,16 @@
-# Flower Classifier: project brief
+# Aircraft Classifier: project brief
 
 **Status: planned. No code and no results yet.** This is a small project plan. Everything below is a target, not a finding. Results get added only after the runs, with the commands to reproduce them.
 
 ## Goal
 
-A small, finished image classifier: give it a photo of a flower and it returns the most likely species out of 102. Flowers are a common starting point in perfumery, so it is a friendly topic, but the project makes no claim about any brand or product.
+A small, finished image classifier: give it a photo of an aircraft and it returns the most likely model variant (for example, which Boeing or Airbus type). Many variants look nearly the same from the side, which makes it a real fine-grained classification problem.
 
 The aim is a clean, complete computer vision project that fits in a couple of weekends: train, compare against a baseline, serve it, test it.
 
 ## Data
 
-- **Dataset:** Oxford 102 Flowers, loaded with `torchvision.datasets.Flowers102` (102 classes, between 40 and 258 images per class, with official train, val and test splits).
+- **Dataset:** FGVC-Aircraft, loaded with `torchvision.datasets.FGVCAircraft` (100 aircraft variants, with official train, val and test splits).
 - **License:** check the terms on the dataset's official page before publishing anything derived from it. Images are not stored in this repo.
 - **Checks before training:** class balance, image size spread, and a look at a sample of images from a few classes.
 
@@ -25,14 +25,14 @@ The aim is a clean, complete computer vision project that fits in a couple of we
 ## Evaluation plan
 
 - Accuracy and macro-F1 on the test split, and a confusion matrix.
-- A look at the most confused species pairs and the images the model gets wrong.
+- A look at the most confused variant pairs and the images the model gets wrong.
 - Repeat the final model over a few seeds and report the spread. A single run is not a result.
 - **Target (a hypothesis):** the fine-tuned model clearly beats the baseline. I will say so if it does not.
 
 ## Small production part
 
 - MLflow to track runs.
-- A FastAPI endpoint that takes an image and returns the top 3 species with scores.
+- A FastAPI endpoint that takes an image and returns the top 3 variants with scores.
 - Docker image.
 - pytest for preprocessing and the API, including bad inputs, and a GitHub Actions workflow to run them.
 
@@ -49,7 +49,7 @@ Python, PyTorch, torchvision, scikit-learn, MLflow, FastAPI, Docker, GitHub Acti
 
 ## Known limits
 
-- One clean, well-photographed dataset. Phone photos in a garden will do worse.
+- One curated dataset. Photos from other angles, airports or phones will do worse.
 - One seed per run at first; small comparisons are noisy.
 - No drift monitoring or retraining in this version.
 
